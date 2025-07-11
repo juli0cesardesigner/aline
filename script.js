@@ -24,12 +24,15 @@ function playCurrentVideo() {
 }
 
 // Eventos do swiper
-swiper.on('slideChangeTransitionEnd', () => {
-  pauseAllVideos();
-  playCurrentVideo();
-});
-
-// Tocar vídeo inicial se for vídeo
-window.addEventListener('load', () => {
-  playCurrentVideo();
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  loop: false,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  spaceBetween: 0,
+  touchRatio: 1,
+  simulateTouch: true,
+  allowTouchMove: true,
 });

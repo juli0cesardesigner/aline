@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  font-family: sans-serif;
+  color: white;
+}
+
+/* Header estilo Instagram */
+.insta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #222;
+}
+.insta-header .left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+.insta-header .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.follow-btn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 14px;
+}
+
+/* Perfil info */
+.insta-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+}
+.insta-user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+/* Carrossel */
+.carousel-container {
+  width: 100%;
+}
+.swiper {
+  width: 100%;
+  position: relative;
+  padding-top: calc(100% * (1350 / 1080)); /* 1080x1350 proporção */
+  overflow: hidden;
+}
+.swiper-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.swiper-pagination {
+  bottom: 8px !important;
+}
+
+/* Rodapé */
+.insta-footer {
+  padding: 12px;
+  font-size: 14px;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.actions i {
+  font-size: 22px;
+}
+.dot-indicators {
+  flex: 1;
+  text-align: center;
+  font-size: 10px;
+  color: #666;
+}
+.insta-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0 0;
+  border-top: 1px solid #222;
+  margin-top: 16px;
+}
+.insta-nav i {
+  font-size: 22px;
+}

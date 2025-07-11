@@ -1,37 +1,35 @@
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
-  loop: false,
+  loop: false, // desativa o loop
   pagination: {
     el: '.swiper-pagination',
   },
 });
 
-// Função para pausar todos os vídeos
+// Pausar todos os vídeos
 function pauseAllVideos() {
   document.querySelectorAll('video').forEach(video => {
     video.pause();
-    video.currentTime = 0; // opcional: reseta ao início
+    video.currentTime = 0;
   });
 }
 
-// Reproduz o vídeo da slide atual (se houver)
+// Reproduz vídeo do slide atual
 function playCurrentVideo() {
-  const currentSlide = document.querySelector('.swiper-slide-active');
-  const video = currentSlide.querySelector('video');
+  const activeSlide = document.querySelector('.swiper-slide-active');
+  const video = activeSlide.querySelector('video');
   if (video) {
-    video.play().catch(() => {
-      // silencioso caso o autoplay falhe (por segurança do navegador)
-    });
+    video.play().catch(() => {});
   }
 }
 
-// Ao mudar o slide
+// Eventos do swiper
 swiper.on('slideChangeTransitionEnd', () => {
   pauseAllVideos();
   playCurrentVideo();
 });
 
-// Roda o vídeo da primeira slide se for um vídeo
+// Tocar vídeo inicial se for vídeo
 window.addEventListener('load', () => {
   playCurrentVideo();
 });

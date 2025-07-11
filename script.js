@@ -4,28 +4,34 @@ const swiper = new Swiper('.swiper', {
   pagination: {
     el: '.swiper-pagination',
   },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
 });
 
-// Impede o menu ao pressionar a imagem
-document.querySelectorAll('.swiper-slide img').forEach(img => {
-  img.addEventListener('contextmenu', e => e.preventDefault());
+// Função para pausar todos os vídeos
+function pauseAllVideos() {
+  document.querySelectorAll('video').forEach(video => {
+    video.pause();
+    video.currentTime = 0; // opcional: reseta ao início
+  });
+}
+
+// Reproduz o vídeo da slide atual (se houver)
+function playCurrentVideo() {
+  const currentSlide = document.querySelector('.swiper-slide-active');
+  const video = currentSlide.querySelector('video');
+  if (video) {
+    video.play().catch(() => {
+      // silencioso caso o autoplay falhe (por segurança do navegador)
+    });
+  }
+}
+
+// Ao mudar o slide
+swiper.on('slideChangeTransitionEnd', () => {
+  pauseAllVideos();
+  playCurrentVideo();
 });
 
-// Pausar quando tocar e segurar
-const swiperEl = document.querySelector('.swiper');
-
-swiperEl.addEventListener('touchstart', () => {
-  swiper.autoplay.stop();
-});
-
-swiperEl.addEventListener('touchend', () => {
-  swiper.autoplay.start();
-});
-
-swiperEl.addEventListener('touchcancel', () => {
-  swiper.autoplay.start();
+// Roda o vídeo da primeira slide se for um vídeo
+window.addEventListener('load', () => {
+  playCurrentVideo();
 });

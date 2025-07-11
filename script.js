@@ -1,9 +1,14 @@
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
-  loop: false, // desativa o loop
+  loop: false,
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
+  spaceBetween: 0,
+  touchRatio: 1,
+  simulateTouch: true,
+  allowTouchMove: true,
 });
 
 // Pausar todos os vídeos
@@ -14,7 +19,7 @@ function pauseAllVideos() {
   });
 }
 
-// Reproduz vídeo do slide atual
+// Reproduzir vídeo da slide atual
 function playCurrentVideo() {
   const activeSlide = document.querySelector('.swiper-slide-active');
   const video = activeSlide.querySelector('video');
@@ -23,16 +28,13 @@ function playCurrentVideo() {
   }
 }
 
-// Eventos do swiper
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 1,
-  loop: false,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  spaceBetween: 0,
-  touchRatio: 1,
-  simulateTouch: true,
-  allowTouchMove: true,
+// Quando mudar de slide
+swiper.on('slideChangeTransitionEnd', () => {
+  pauseAllVideos();
+  playCurrentVideo();
+});
+
+// Tocar vídeo inicial
+window.addEventListener('load', () => {
+  playCurrentVideo();
 });

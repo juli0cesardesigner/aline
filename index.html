@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Carousel Mockup</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script> <!-- Ícones estilo Instagram -->
+</head>
+<body>
+
+  <!-- Topo estilo Instagram -->
+  <header class="insta-header">
+    <div class="left">
+      <i class="ph ph-arrow-left"></i>
+      <span>Explorar</span>
+    </div>
+    <div class="right">
+      <button class="follow-btn">Seguir</button>
+      <i class="ph ph-dots-three-outline-vertical"></i>
+    </div>
+  </header>
+
+  <!-- Sub-info do perfil -->
+  <section class="insta-user">
+    <img src="images/infor.jpg" alt="avatar" />
+    <div class="user-info">
+      <strong>inforgraph</strong>
+      <span>🎶Urban.json · Moments</span>
+    </div>
+  </section>
+
+  <!-- Carrossel -->
+  <main class="carousel-container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Substitua pelos seus slides -->
+        <div class="swiper-slide"><img src="images/001.webp" alt="Story 1" /></div>
+        <div class="swiper-slide"><img src="images/002.webp" alt="Story 2" /></div>
+        <div class="swiper-slide"><img src="images/003.webp" alt="Story 3" /></div>
+        <div class="swiper-slide"><img src="images/004.webp" alt="Story 4" /></div>
+        <div class="swiper-slide"><img src="images/005.webp" alt="Story 5" /></div>
+        <div class="swiper-slide"><img src="images/006.webp" alt="Story 6" /></div>
+        <div class="swiper-slide"><img src="images/007.webp" alt="Story 7" /></div>
+        <div class="swiper-slide"><img src="images/008.webp" alt="Story 8" /></div>
+        <div class="swiper-slide"><img src="images/009.webp" alt="Story 9" /></div>
+      </div>
+      <!-- Paginação opcional -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <!-- Rodapé com ações -->
+  <footer class="insta-footer">
+    <div class="actions">
+      <i class="ph ph-heart"></i>
+      <i class="ph ph-chat-circle"></i>
+      <i class="ph ph-paper-plane-right"></i>
+      <div class="dot-indicators"></div>
+      <i class="ph ph-bookmark-simple"></i>
+    </div>
+    <p><strong>janis_diniz</strong> e outras pessoas curtiram</p>
+    <p><strong>inforgraph</strong> Comenta aqui, o que achou desse formato...</p>
+
+    <!-- Menu inferior -->
+    <nav class="insta-nav">
+      <i class="ph ph-house"></i>
+      <i class="ph ph-magnifying-glass"></i>
+      <i class="ph ph-plus-square"></i>
+      <i class="ph ph-video-camera"></i>
+      <i class="ph ph-user-circle"></i>
+    </nav>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
